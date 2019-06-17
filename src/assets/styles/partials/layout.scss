@@ -13,7 +13,7 @@ $sizes: (
   s: 5,
   m: 10,
   l: 15,
-  xl: 20
+  xl: 30
 );
 $properties: (
   m: 'margin',
@@ -86,5 +86,14 @@ $media-columns: (
 .display {
   &-inline {
     display: inline-block;
+  }
+
+  &-flex {
+    display: flex;
+    flex: 1 1 auto;
+
+    &.wrap {
+      flex-wrap: wrap;
+    }
   }
 }

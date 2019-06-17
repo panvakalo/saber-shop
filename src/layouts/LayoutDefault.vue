@@ -2,7 +2,9 @@
   <div class="full__width full__height">
     <app-header />
     <main>
-      <slot></slot>
+      <div class="wrapper pt-xl bg__black overflow-hidden">
+        <slot></slot>
+      </div>
     </main>
   </div>
 </template>
