@@ -9,9 +9,9 @@
           <button
             v-if="isJedi"
             class="display-inline header-button"
-            @click="goToPage('manager')"
+            @click="goToPage(buttonData.routeName)"
           >
-            Manage Sabers
+            {{ buttonData.text }}
           </button>
           <button
             class="display-inline header-button ml-m"
@@ -30,7 +30,13 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'AppHeader',
   computed: {
-    ...mapState('account', ['isJedi'])
+    ...mapState('account', ['isJedi']),
+    buttonData () {
+      return {
+        text: !this.$route.name || this.$route.name === 'home' ? 'Manage Sabers' : 'Go back',
+        routeName: !this.$route.name || this.$route.name === 'home' ? 'manager' : 'home'
+      }
+    }
   },
   methods: {
     ...mapMutations('account', ['setJediStatus', 'logout']),

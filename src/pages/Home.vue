@@ -1,6 +1,8 @@
 <template>
   <layout-default>
-    <sabers-list :sabers="sabers" />
+    <sabers-list
+      :sabers="sabers"
+    />
   </layout-default>
 </template>
 
@@ -26,7 +28,7 @@ export default {
   },
   mounted () {
     // in a real world example, I would use asyncData vuejs hook
-    // but since this is not async, I can just use mounted hook
+    // but since this example app is not async, I can just use mounted hook
     this.fetchSabers()
   },
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="full__width full__height vertical-middle bg__blue-gray">
+  <div class="full__width full__height vertical-middle bg__black">
     <div class="vertical-middle__inner text-align__center pa-s">
       <div class="m-auto l4 m6 s10 xs12 text-color__black">
         <section class="bg__gray overflow-hidden login-header">

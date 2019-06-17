@@ -1,5 +1,6 @@
 <template>
-  <span class="pa-m xs12 s6 m4 l3 float-left box-sizing-border">
+  <span class="pa-m xs12 s6 m4 l3 float-left box-sizing-border"
+        v-if="saber.available">
     <div
       class="lightsaber-wrapper pl-xl pb-xl pointer"
       @mouseover="onHover = true"
@@ -18,38 +19,16 @@
           :class="crystalColor"
         ></div>
       </div>
-      <div class="lightsaber-data pa-s bg__gray-dark">
-        <div>
-          <span class="bold">
-            Name:
-          </span>
-          {{ saber.crystal.name }}</div>
-        <div>
-          <span class="bold">
-            Type:
-          </span>
-          {{ saber.name }}
-        </div>
-        <div>
-          <span class="bold">
-            Available:
-          </span>
-          {{ saber.available }}
-        </div>
-        <div>
-          <span class="bold">
-            Crystal color:
-          </span>
-          {{ saber.crystal.color }}
-        </div>
-      </div>
+      <saber-data :saber="saber" />
     </div>
   </span>
 </template>
 
 <script>
+import SaberData from './saberData'
 export default {
   name: 'saberItem',
+  components: { SaberData },
   props: {
     saber: {
       type: Object,

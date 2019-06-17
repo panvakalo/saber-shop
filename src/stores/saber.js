@@ -7,11 +7,18 @@ export const saberStore = {
   mutations: {
     setSabers (state, sabers) {
       state.sabers = sabers
+    },
+    setSaberQuantity (state, payload) {
+      let activeSaber = state.sabers.filter(saber => {
+        return saber.id === payload.id
+      })
+      let index = state.sabers.indexOf(activeSaber[0])
+      state.sabers[index].available = payload.value
     }
   },
   actions: {
-    fetchSabers ({ commit }) {
-      commit('setSabers', saberJson.sabers)
+    fetchSabers ({ state, commit }) {
+      !state.sabers.length && commit('setSabers', saberJson.sabers)
     }
   }
 }

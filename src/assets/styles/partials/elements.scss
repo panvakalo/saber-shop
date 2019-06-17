@@ -13,6 +13,12 @@ input[type='text'], input[type='password'], input[type='number'] {
     outline: none;
     border: 1px solid $gray-dark;
   }
+
+  &.small {
+    padding: 0 10px;
+    margin-bottom: 0;
+    width: 40px;
+  }
 }
 
 button {
