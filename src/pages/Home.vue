@@ -1,16 +1,18 @@
 <template>
   <layout-default>
-    home
+    <sabers-list :sabers="sabers" />
   </layout-default>
 </template>
 
 <script>
 import LayoutDefault from '../layouts/LayoutDefault'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+import SabersList from '../components/sabers/sabersList'
 
 export default {
   name: 'Home',
   components: {
+    SabersList,
     LayoutDefault
   },
   data () {
@@ -19,9 +21,17 @@ export default {
     }
   },
   computed: {
-    ...mapState('account', ['isJedi'])
+    ...mapState('account', ['isJedi']),
+    ...mapState('saber', ['sabers'])
   },
-  methods: {}
+  mounted () {
+    // in a real world example, I would use asyncData vuejs hook
+    // but since this is not async, I can just use mounted hook
+    this.fetchSabers()
+  },
+  methods: {
+    ...mapActions('saber', ['fetchSabers'])
+  }
 }
 </script>
 

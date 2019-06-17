@@ -88,7 +88,7 @@ export default {
     }
   },
   beforeDestroy () {
-    this.$off('auth')
+    this.$off('login')
     this.$off('clicked')
   },
   methods: {

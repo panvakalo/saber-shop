@@ -1,0 +1,94 @@
+{
+  "sabers": [
+    {
+      "id":4456,
+      "name":"Sith Saber",
+      "available":27,
+      "crystal":{
+        "name":"Kadril saber",
+        "color":"red",
+        "planet":37
+      }
+    },
+    {
+      "id":7766,
+      "name":"Master Jedi Saber",
+      "available":13,
+      "crystal":{
+        "name":"Obi Wan saber",
+        "color":"green",
+        "planet":24
+      }
+    },
+    {
+      "id":2437,
+      "name":"Sith Saber",
+      "available":13,
+      "crystal":{
+        "name":"Darth Maul saber",
+        "color":"red",
+        "planet":37
+      }
+    },
+    {
+      "id":2342,
+      "name":"Sith Saber",
+      "available":4,
+      "crystal":{
+        "name":"Darth Vader saber",
+        "color":"red",
+        "planet":37
+      }
+    },
+    {
+      "id":1234,
+      "name":"Master Jedi Saber",
+      "available":2,
+      "crystal":{
+        "name":"Mace Windu saber",
+        "color":"red",
+        "planet":37
+      }
+    },
+    {
+      "id":4362,
+      "name":"Master Jedi Saber",
+      "available":11,
+      "crystal":{
+        "name":"Plo Koon saber",
+        "color":"blue",
+        "planet":4
+      }
+    },
+    {
+      "id":4370,
+      "name":"Master Jedi Saber",
+      "available":1,
+      "crystal":{
+        "name":"Oppo Rancisis saber",
+        "color":"blue",
+        "planet":4
+      }
+    },
+    {
+      "id":7895,
+      "name":"Master Jedi Saber",
+      "available":2,
+      "crystal":{
+        "name":"Eeth Koth saber",
+        "color":"green",
+        "planet":24
+      }
+    },
+    {
+      "id":8743,
+      "name":"Master Jedi Saber",
+      "available":8,
+      "crystal":{
+        "name":"Depa Billaba saber",
+        "color":"green",
+        "planet":24
+      }
+    }
+  ]
+}

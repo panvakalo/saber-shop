@@ -22,9 +22,8 @@ export const accountStore = {
       commit('setPadawanAge', null)
     },
     validate ({ commit }, data) {
-      console.log('password given: ' + data)
       // TODO: add validation
-      commit('setErrorMessage', 'wrong password')
+      commit('setErrorMessage', '')
     },
     clearForm ({ commit }) {
       commit('setErrorMessage', '')
