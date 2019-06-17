@@ -6,7 +6,6 @@
       <div class="switch"></div>
       <div class="plasma yoda"></div>
     </div>
-    <h3>Yoda</h3>
   </div>
 </template>
 
