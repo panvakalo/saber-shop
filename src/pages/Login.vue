@@ -3,7 +3,7 @@
     <div class="vertical-middle__inner text-align__center pa-s">
       <div class="m-auto l4 m6 s10 xs12 text-color__black">
         <section class="bg__gray overflow-hidden login-header">
-          <img src="../assets/images/star_wars_logo.png">
+          <img src="../assets/images/star_wars_logo.png" class="pt-xl pb-xl">
         </section>
         <section class="pa-l bg__gray-lighter login-content overflow-hidden">
           <div v-if="!isChoiceGiven">
@@ -39,8 +39,9 @@
           <div v-if="isChoiceGiven">
             <jedi-form
               :is-jedi="isJedi"
+              :form-data="formData"
               @clicked="setChoice(false, false)"
-              @auth="login"
+              @login="login"
             />
           </div>
         </section>
@@ -50,7 +51,7 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import customButton from '../components/common/customButton'
 import JediForm from '../components/login/jediForm'
 export default {
@@ -70,11 +71,20 @@ export default {
   },
   computed: {
     ...mapState('account', ['isJedi']),
-    jediClicked () {
-      return this.isChoiceGiven && this.isJedi
-    },
-    padawanClicked () {
-      return this.isChoiceGiven && !this.isJedi
+    formData () {
+      if (this.isJedi) {
+        return {
+          inputType: 'password',
+          placeholder: 'Forceful password',
+          name: 'password'
+        }
+      } else {
+        return {
+          inputType: 'text',
+          placeholder: 'Type your age',
+          name: 'age'
+        }
+      }
     }
   },
   beforeDestroy () {
@@ -82,14 +92,13 @@ export default {
     this.$off('clicked')
   },
   methods: {
-    ...mapActions('customer', ['login']),
-    ...mapMutations('account', ['setJediStatus']),
+    ...mapMutations('account', ['setJediStatus', 'setPadawanAge']),
     setChoice (jediStatus, choiceStatus) {
       this.setJediStatus(jediStatus)
       this.isChoiceGiven = choiceStatus
     },
-    async login (formData) {
-      console.log(formData)
+    login () {
+      this.$router.push({ name: 'home' })
     }
   }
 }
@@ -101,7 +110,6 @@ export default {
     border-top-right-radius: 5px;
     img {
       width: 200px;
-      padding: 10px 0;
     }
   }
 

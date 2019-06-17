@@ -2,23 +2,17 @@
   <div>
     <form @submit.prevent="auth">
       <input
-        v-if="isJedi"
-        v-model="jediForm.password"
-        type="password"
-        name="password"
+        v-model="jediForm.data"
+        :type="formData.inputType"
+        :name="formData.name"
         required
         class="xs12 text-color__black"
-        placeholder="Forcefull password"
+        :placeholder="formData.placeholder"
       >
-      <input
-        v-if="!isJedi"
-        v-model="jediForm.age"
-        type="number"
-        name="age"
-        required
-        class="xs12 text-color__black"
-        placeholder="Fill in your age"
-      >
+      <error-message
+        v-if="errorMessage.length"
+        :error-message="errorMessage"
+      />
       <div>
         <button
           type="submit"
@@ -39,14 +33,23 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+import errorMessage from '../common/errorMessage'
 export default {
   name: 'jediForm',
+  components: {
+    errorMessage
+  },
   props: {
     isJedi: {
       type: Boolean,
       default: function () {
         return false
       },
+      required: true
+    },
+    formData: {
+      type: Object,
       required: true
     }
   },
@@ -58,10 +61,18 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState('account', ['wrongPassword', 'errorMessage'])
+  },
+  mounted () {
+    this.clearForm()
+  },
   methods: {
+    ...mapActions('account', ['validate', 'clearForm']),
     auth (e) {
       e.preventDefault()
-      this.$emit('auth', this.jediForm)
+      this.validate(this.jediForm)
+      !this.errorMessage.length && this.$emit('login')
     },
     goBack () {
       this.$emit('clicked')

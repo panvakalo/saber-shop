@@ -22,9 +22,9 @@ export default new Router({
       component: () => import('./pages/Login.vue')
     },
     {
-      path: '/add-video',
-      name: 'add-video',
-      component: () => import('./pages/AddVideo.vue')
+      path: '/manager',
+      name: 'manager',
+      component: () => import('./pages/Manager.vue')
     }
   ]
 })
