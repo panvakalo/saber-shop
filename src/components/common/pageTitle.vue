@@ -1,5 +1,5 @@
 <template>
-  <div class="page-title">
+  <div class="page-title clear-float">
     <img
       :src="iconSrc"
       alt="page-title"
@@ -37,11 +37,6 @@ export default {
 
   .page-title {
     color: $white;
-    &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
 
     .star-wars-icon {
       background-color: white;

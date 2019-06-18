@@ -14,6 +14,9 @@ export const saberStore = {
       })
       let index = state.sabers.indexOf(activeSaber[0])
       state.sabers[index].available = payload.value
+    },
+    addSaber (state, saber) {
+      state.sabers.push(saber)
     }
   },
   actions: {
