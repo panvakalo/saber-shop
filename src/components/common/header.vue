@@ -6,8 +6,9 @@
           <img src="../../assets/images/star_wars_logo.png" alt="Page logo" class="float-left">
         </section>
         <section class="float-right">
+          <force-power v-if="!isMasterJedi"/>
           <button
-            v-if="isJedi"
+            v-if="isMasterJedi"
             class="display-inline header-button"
             @click="goToPage(buttonData.routeName)"
           >
@@ -27,10 +28,12 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import ForcePower from '../padawan/forcePower'
 export default {
   name: 'AppHeader',
+  components: {ForcePower},
   computed: {
-    ...mapState('account', ['isJedi']),
+    ...mapState('account', ['isMasterJedi']),
     buttonData () {
       return {
         text: !this.$route.name || this.$route.name === 'home' ? 'Manage Sabers' : 'Go back',

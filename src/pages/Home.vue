@@ -26,7 +26,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('account', ['isJedi']),
+    ...mapState('account', ['isMasterJedi']),
     ...mapState('saber', ['sabers'])
   },
   mounted () {

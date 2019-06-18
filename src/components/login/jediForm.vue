@@ -41,7 +41,7 @@ export default {
     errorMessage
   },
   props: {
-    isJedi: {
+    isMasterJedi: {
       type: Boolean,
       default: function () {
         return false

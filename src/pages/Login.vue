@@ -38,7 +38,7 @@
           </div>
           <div v-if="isChoiceGiven">
             <jedi-form
-              :is-jedi="isJedi"
+              :is-master-jedi="isMasterJedi"
               :form-data="formData"
               @clicked="setChoice(false, false)"
               @login="login"
@@ -70,9 +70,9 @@ export default {
     }
   },
   computed: {
-    ...mapState('account', ['isJedi']),
+    ...mapState('account', ['isMasterJedi']),
     formData () {
-      if (this.isJedi) {
+      if (this.isMasterJedi) {
         return {
           inputType: 'password',
           placeholder: 'Forceful password',
@@ -92,7 +92,7 @@ export default {
     this.$off('clicked')
   },
   methods: {
-    ...mapMutations('account', ['setJediStatus', 'setPadawanAge']),
+    ...mapMutations('account', ['setJediStatus']),
     setChoice (jediStatus, choiceStatus) {
       this.setJediStatus(jediStatus)
       this.isChoiceGiven = choiceStatus
