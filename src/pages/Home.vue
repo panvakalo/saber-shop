@@ -1,5 +1,6 @@
 <template>
   <layout-default>
+    <page-title :title="'Lightsaber Shop'" :icon="'Star_Wars_C3PO'"/>
     <sabers-list
       :sabers="sabers"
     />
@@ -10,10 +11,12 @@
 import LayoutDefault from '../layouts/LayoutDefault'
 import { mapState, mapActions } from 'vuex'
 import SabersList from '../components/sabers/sabersList'
+import PageTitle from '../components/common/pageTitle'
 
 export default {
   name: 'Home',
   components: {
+    PageTitle,
     SabersList,
     LayoutDefault
   },

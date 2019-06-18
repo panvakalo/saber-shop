@@ -1,5 +1,5 @@
 <template>
-  <div class="lightsaber-data pa-s bg__gray-dark">
+  <div class="lightsaber-data pa-s bg__gray-dark border-radius__medium">
     <div>
       <span class="bold">
         Name:
@@ -67,5 +67,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .lightsaber-data {
+    box-sizing: border-box;
+  }
 </style>

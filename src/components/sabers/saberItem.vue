@@ -1,6 +1,8 @@
 <template>
-  <span class="pa-m xs12 s6 m4 l3 float-left box-sizing-border"
-        v-if="saber.available">
+  <span
+    v-if="saber.available"
+    class="pa-m xs12 s6 m4 l3 float-left box-sizing-border"
+  >
     <div
       class="lightsaber-wrapper pl-xl pb-xl pointer"
       @mouseover="onHover = true"
@@ -78,7 +80,6 @@ export default {
         position: absolute;
         top: 10px;
         right: 10px;
-        border: 1px solid $gray-light
       }
     }
   }

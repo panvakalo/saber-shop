@@ -18,7 +18,7 @@
                 src="../assets/images/star-wars-svg/Star_Wars_Falcon.svg"
                 alt="falcon icon"
                 align="middle"
-                class="mr-l"
+                class="mr-l star-wars-icon"
               >
             </custom-button>
             <custom-button
@@ -32,7 +32,7 @@
                 src="../assets/images/star-wars-svg/Star_Wars_Battle Droid.svg"
                 alt="falcon icon"
                 align="middle"
-                class="mr-l"
+                class="mr-l star-wars-icon"
               >
             </custom-button>
           </div>
