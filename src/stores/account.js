@@ -21,9 +21,15 @@ export const accountStore = {
       commit('setJediStatus', false)
       commit('setPadawanAge', null)
     },
-    validate ({ commit }, data) {
-      // TODO: add validation
-      commit('setErrorMessage', '')
+    validate ({ state, commit }, data) {
+      let errorMessage = ''
+      if (data.password && data.password !== 'asdasd') {
+        errorMessage = 'The Force does not agree with your password'
+      }
+      if (data.age && data.age > 140) {
+        errorMessage = 'You should be dead, you know...'
+      }
+      commit('setErrorMessage', errorMessage)
     },
     clearForm ({ commit }) {
       commit('setErrorMessage', '')

@@ -80,7 +80,7 @@ export default {
         }
       } else {
         return {
-          inputType: 'text',
+          inputType: 'number',
           placeholder: 'Type your age',
           name: 'age'
         }

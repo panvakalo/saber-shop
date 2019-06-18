@@ -2,7 +2,7 @@
   <div>
     <form @submit.prevent="auth">
       <input
-        v-model="jediForm.data"
+        v-model="jediForm[formData.name]"
         :type="formData.inputType"
         :name="formData.name"
         required
