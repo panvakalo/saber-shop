@@ -9,7 +9,7 @@
           <div v-if="!isChoiceGiven">
             <custom-button
               :button-type="'button'"
-              :button-text="'I am a Jedi'"
+              :button-text="'I am a Jedi Master'"
               class="xs12 mb-xl"
               @clicked="setChoice(true, true)"
             >
