@@ -17,11 +17,7 @@ export const accountStore = {
       state.errorMessage = text
     },
     setForcePower (state, age) {
-      if (age < 18) {
-        state.forcePower = age * 10
-      } else {
-        state.forcePower = 'unlimited'
-      }
+      state.forcePower = age * 10
     }
   },
   actions: {
@@ -41,6 +37,8 @@ export const accountStore = {
         } else {
           errorMessage = 'You should be dead, you know...'
         }
+      } else {
+        commit('setPadawanAge', null)
       }
       commit('setErrorMessage', errorMessage)
     },

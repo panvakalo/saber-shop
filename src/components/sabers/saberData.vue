@@ -32,13 +32,16 @@
       </span>
       {{ saber.crystal.color }}
     </div>
+    <saber-price :crystal="saber.crystal.color" />
   </div>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
+import SaberPrice from './saberPrice'
 export default {
   name: 'saberData',
+  components: { SaberPrice },
   props: {
     saber: {
       type: Object,
