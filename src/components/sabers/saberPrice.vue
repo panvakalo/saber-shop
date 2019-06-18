@@ -10,7 +10,10 @@
       <span class="bold">
         Price:
       </span>
-      {{ price }}Cr
+      {{ price }}
+      <img
+        class="star-wars-credit"
+        src="../../assets/images/credit.svg">
     </div>
   </div>
 </template>
@@ -59,5 +62,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .star-wars-credit {
+    width: 9px;
+  }
 </style>

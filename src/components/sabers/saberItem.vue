@@ -4,7 +4,7 @@
     class="pa-m xs12 s6 m4 l3 float-left box-sizing-border"
   >
     <div
-      class="lightsaber-wrapper pl-xl pb-xl pointer"
+      class="lightsaber-wrapper pl-xl pb-xl"
       @mouseover="onHover = true"
       @mouseleave="onHover = false"
     >

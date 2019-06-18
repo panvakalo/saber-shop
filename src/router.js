@@ -25,6 +25,11 @@ export default new Router({
       path: '/manager',
       name: 'manager',
       component: () => import('./pages/Manager.vue')
+    },
+    {
+      path: '/planet/:planetId',
+      name: 'planet-id',
+      component: () => import('./pages/Planet.vue')
     }
   ]
 })

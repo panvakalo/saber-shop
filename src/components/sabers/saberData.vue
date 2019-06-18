@@ -1,5 +1,5 @@
 <template>
-  <div class="lightsaber-data pa-s bg__gray-dark border-radius__medium">
+  <div class="lightsaber-data pa-s bg__gray-dark border-radius__medium no-select">
     <div>
       <span class="bold">
         Name:
@@ -32,11 +32,18 @@
       </span>
       {{ saber.crystal.color }}
     </div>
-    <div>
+    <div
+      class="pointer lightsaber-data__planet"
+    >
       <span class="bold">
         Planet:
       </span>
       {{ planetName }}
+      <router-link :to="{ name: 'planet-id', params: { planetId: saber.crystal.planet }}">
+        <img
+          src="../../assets/images/star-wars-svg/Star_Wars_Death_Star.svg"
+        >
+      </router-link>
     </div>
     <saber-price :crystal="saber.crystal.color" />
   </div>
@@ -48,7 +55,9 @@ import SaberPrice from './saberPrice'
 import { planets } from '../../assets/maps/planets'
 export default {
   name: 'saberData',
-  components: { SaberPrice },
+  components: {
+    SaberPrice
+  },
   props: {
     saber: {
       type: Object,
@@ -79,8 +88,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import '../../assets/styles/partials/colors';
   .lightsaber-data {
     box-sizing: border-box;
+    img {
+      width: 20px;
+      vertical-align: middle;
+    }
+
+    &__planet {
+      &:hover {
+        color: $gray-dark;
+      }
+    }
   }
 </style>
