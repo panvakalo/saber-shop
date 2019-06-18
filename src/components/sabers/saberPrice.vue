@@ -49,10 +49,10 @@ export default {
       }
     },
     powerUsage () {
-      return this.forcePower * this.crystalConfig.powerMultiplier
+      return parseFloat((this.forcePower * this.crystalConfig.powerMultiplier * 100) / 100).toFixed(2)
     },
     price () {
-      return this.powerUsage * this.crystalConfig.priceMultiplier
+      return parseFloat((this.powerUsage * this.crystalConfig.priceMultiplier * 100) / 100).toFixed(2)
     }
   }
 }

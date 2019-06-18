@@ -32,6 +32,12 @@
       </span>
       {{ saber.crystal.color }}
     </div>
+    <div>
+      <span class="bold">
+        Planet:
+      </span>
+      {{ planetName }}
+    </div>
     <saber-price :crystal="saber.crystal.color" />
   </div>
 </template>
@@ -39,6 +45,7 @@
 <script>
 import { mapMutations } from 'vuex'
 import SaberPrice from './saberPrice'
+import { planets } from '../../assets/maps/planets'
 export default {
   name: 'saberData',
   components: { SaberPrice },
@@ -56,6 +63,9 @@ export default {
   computed: {
     isManagerActive () {
       return this.$route.name === 'manager'
+    },
+    planetName () {
+      return planets[this.saber.crystal.planet]
     }
   },
   methods: {

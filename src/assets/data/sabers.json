@@ -7,7 +7,7 @@
       "crystal":{
         "name":"Kadril saber",
         "color":"red",
-        "planet":37
+        "planet":999
       }
     },
     {
@@ -17,17 +17,17 @@
       "crystal":{
         "name":"Obi Wan saber",
         "color":"green",
-        "planet":24
+        "planet":5
       }
     },
     {
-      "id":2437,
+      "id":2537,
       "name":"Sith Saber",
       "available":0,
       "crystal":{
         "name":"Darth Maul saber",
         "color":"red",
-        "planet":37
+        "planet":999
       }
     },
     {
@@ -37,7 +37,7 @@
       "crystal":{
         "name":"Darth Vader saber",
         "color":"red",
-        "planet":37
+        "planet":999
       }
     },
     {
@@ -47,7 +47,7 @@
       "crystal":{
         "name":"Mace Windu saber",
         "color":"red",
-        "planet":37
+        "planet":999
       }
     },
     {
@@ -57,7 +57,7 @@
       "crystal":{
         "name":"Plo Koon saber",
         "color":"blue",
-        "planet":4
+        "planet":25
       }
     },
     {
@@ -67,7 +67,7 @@
       "crystal":{
         "name":"Oppo Rancisis saber",
         "color":"blue",
-        "planet":4
+        "planet":25
       }
     },
     {
@@ -77,7 +77,7 @@
       "crystal":{
         "name":"Eeth Koth saber",
         "color":"green",
-        "planet":24
+        "planet":5
       }
     },
     {
@@ -87,7 +87,7 @@
       "crystal":{
         "name":"Depa Billaba saber",
         "color":"green",
-        "planet":24
+        "planet":5
       }
     }
   ]

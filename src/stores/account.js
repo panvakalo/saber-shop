@@ -31,7 +31,7 @@ export const accountStore = {
         errorMessage = 'The Force does not agree with your password'
       }
       if (data.age) {
-        if (data.age < 140 || data.age < 0) {
+        if (data.age < 140 && data.age > 0) {
           commit('setPadawanAge', data.age)
           commit('setForcePower', data.age)
         } else {
