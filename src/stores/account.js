@@ -48,6 +48,7 @@ export const accountStore = {
     },
     clearForm ({ commit }) {
       commit('setErrorMessage', '')
+      commit('saber/setOrderStatus', false, { root: true })
     }
   }
 }

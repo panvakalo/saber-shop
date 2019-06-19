@@ -22,6 +22,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import { crystalConfig } from '../../assets/maps/crystal'
 export default {
   name: 'saberPrice',
   props: {
@@ -35,29 +36,14 @@ export default {
     isPriceApplicable () {
       return this.forcePower < 180
     },
-    crystalConfig () {
-      if (this.crystal === 'red') {
-        return {
-          powerMultiplier: 0.2,
-          priceMultiplier: 101
-        }
-      } else if (this.crystal === 'blue') {
-        return {
-          powerMultiplier: 0.19,
-          priceMultiplier: 10
-        }
-      } else {
-        return {
-          powerMultiplier: 0.22,
-          priceMultiplier: 37
-        }
-      }
+    crystalStats () {
+      return crystalConfig(this.crystal)
     },
     powerUsage () {
-      return this.isPriceApplicable ? parseFloat((this.forcePower * this.crystalConfig.powerMultiplier * 100) / 100).toFixed(2) : 'Not applicable'
+      return this.isPriceApplicable ? parseFloat((this.forcePower * this.crystalStats.powerMultiplier * 100) / 100).toFixed(2) : 'Not applicable'
     },
     price () {
-      return this.isPriceApplicable ? parseFloat((this.powerUsage * this.crystalConfig.priceMultiplier * 100) / 100).toFixed(2) : 'Not applicable'
+      return this.isPriceApplicable ? parseFloat((this.powerUsage * this.crystalStats.priceMultiplier * 100) / 100).toFixed(2) : 'Not applicable'
     }
   }
 }

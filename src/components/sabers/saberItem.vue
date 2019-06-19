@@ -22,11 +22,19 @@
         ></div>
       </div>
       <saber-data :saber="saber" />
+      <i
+        v-if="onHover && !orderIsPlaced"
+        class="material-icons shopping text__white"
+        @click="constructOrder(saber)"
+      >
+        shopping_cart
+      </i>
     </div>
   </span>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import SaberData from './saberData'
 export default {
   name: 'saberItem',
@@ -43,18 +51,16 @@ export default {
     }
   },
   computed: {
+    ...mapState('saber', ['orderIsPlaced']),
     crystalColor () {
       return 'crystal-' + this.saber.crystal.color
     }
   },
   methods: {
+    ...mapActions('saber', ['constructOrder']),
     toggleCheck (e) {
       e.preventDefault()
       e.target.checked = !e.target.checked
-    },
-    test (e) {
-      let state = e.target.children[0].children[1].checked
-      console.log(state)
     }
   }
 }
@@ -82,5 +88,12 @@ export default {
         right: 10px;
       }
     }
+  }
+
+  .shopping {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
   }
 </style>
