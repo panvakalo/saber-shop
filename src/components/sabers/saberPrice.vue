@@ -12,8 +12,10 @@
       </span>
       {{ price }}
       <img
+        v-if="isPriceApplicable"
         class="star-wars-credit"
-        src="../../assets/images/credit.svg">
+        src="../../assets/images/credit.svg"
+      >
     </div>
   </div>
 </template>
@@ -31,7 +33,7 @@ export default {
   computed: {
     ...mapState('account', ['forcePower']),
     isPriceApplicable () {
-      return this.forcePower <= 180
+      return this.forcePower < 180
     },
     crystalConfig () {
       if (this.crystal === 'red') {
@@ -52,10 +54,10 @@ export default {
       }
     },
     powerUsage () {
-      return parseFloat((this.forcePower * this.crystalConfig.powerMultiplier * 100) / 100).toFixed(2)
+      return this.isPriceApplicable ? parseFloat((this.forcePower * this.crystalConfig.powerMultiplier * 100) / 100).toFixed(2) : 'Not applicable'
     },
     price () {
-      return parseFloat((this.powerUsage * this.crystalConfig.priceMultiplier * 100) / 100).toFixed(2)
+      return this.isPriceApplicable ? parseFloat((this.powerUsage * this.crystalConfig.priceMultiplier * 100) / 100).toFixed(2) : 'Not applicable'
     }
   }
 }

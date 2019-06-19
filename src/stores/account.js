@@ -17,7 +17,11 @@ export const accountStore = {
       state.errorMessage = text
     },
     setForcePower (state, age) {
-      state.forcePower = age * 10
+      if (age < 18) {
+        state.forcePower = age * 10
+      } else {
+        state.forcePower = Infinity
+      }
     }
   },
   actions: {
