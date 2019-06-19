@@ -57,6 +57,12 @@ button {
       color: $white;
     }
   }
+
+  i {
+    vertical-align: bottom;
+    margin-right: 5px;
+    font-size: 18px !important;
+  }
 }
 
 .alert {
