@@ -4,6 +4,11 @@
     <div
       class="planet-data overflow-hidden"
     >
+      <div v-if="loading" class="text-align__center">
+        <i class="material-icons align-vertical__bottom">hourglass_empty</i>
+        <span>Loading...</span>
+        <i class="material-icons align-vertical__bottom">hourglass_empty</i>
+      </div>
       <div v-if="dataFetched">
         <planet-data
           :data-label="'Name: '"
@@ -65,7 +70,8 @@ export default {
     return {
       planetData: {},
       dataFetched: false,
-      errorMessage: false
+      errorMessage: false,
+      loading: false
     }
   },
   async created () {
@@ -74,11 +80,14 @@ export default {
   },
   methods: {
     async getPlanetData (planetId) {
+      this.loading = true
       try {
         this.planetData = await planetService.fetchPlanetData(planetId)
         this.dataFetched = true
+        this.loading = false
       } catch (error) {
         this.errorMessage = true
+        this.loading = false
       }
     },
     goBack () {

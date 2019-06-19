@@ -62,3 +62,11 @@
 .no-select {
   user-select: none;
 }
+
+.align {
+  &-vertical {
+    &__bottom {
+      vertical-align: bottom;
+    }
+  }
+}
