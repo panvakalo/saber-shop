@@ -6,16 +6,23 @@
           <img src="../../assets/images/star_wars_logo.png" alt="Page logo" class="float-left">
         </section>
         <section class="float-right">
-          <force-power v-if="!isMasterJedi"/>
+          <force-power v-if="!isMasterJedi" />
           <button
             v-if="isMasterJedi"
-            class="display-inline header-button"
+            class="display-inline header-button mr-m"
+            @click="goToPage('orders')"
+          >
+            Manage Orders
+          </button>
+          <button
+            v-if="isMasterJedi"
+            class="display-inline header-button mr-m"
             @click="goToPage(buttonData.routeName)"
           >
             {{ buttonData.text }}
           </button>
           <button
-            class="display-inline header-button ml-m"
+            class="display-inline header-button"
             @click="goToPage('login')"
           >
             Logout
@@ -31,7 +38,7 @@ import { mapState, mapMutations } from 'vuex'
 import ForcePower from '../padawan/forcePower'
 export default {
   name: 'AppHeader',
-  components: {ForcePower},
+  components: { ForcePower },
   computed: {
     ...mapState('account', ['isMasterJedi']),
     buttonData () {

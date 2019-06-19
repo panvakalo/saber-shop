@@ -23,7 +23,7 @@
       </div>
       <saber-data :saber="saber" />
       <i
-        v-if="onHover && !orderIsPlaced"
+        v-if="onHover && !orderIsPlaced && !isMasterJedi"
         class="material-icons shopping text__white"
         @click="constructOrder(saber)"
       >
@@ -52,6 +52,7 @@ export default {
   },
   computed: {
     ...mapState('saber', ['orderIsPlaced']),
+    ...mapState('account', ['isMasterJedi']),
     crystalColor () {
       return 'crystal-' + this.saber.crystal.color
     }

@@ -30,6 +30,11 @@ export default new Router({
       path: '/planet/:planetId',
       name: 'planet-id',
       component: () => import('./pages/Planet.vue')
+    },
+    {
+      path: '/orders',
+      name: 'orders',
+      component: () => import('./pages/Orders.vue')
     }
   ]
 })

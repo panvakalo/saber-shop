@@ -99,7 +99,7 @@ export default {
 
     &__planet {
       &:hover {
-        color: $gray-dark;
+        color: $gray;
       }
     }
   }

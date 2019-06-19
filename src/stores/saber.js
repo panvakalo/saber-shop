@@ -24,7 +24,6 @@ export const saberStore = {
     },
     addToOrderedSabers (state, saber) {
       state.orderedSabers.push(saber)
-      console.log(state.orderedSabers)
     },
     setOrderStatus (state, status) {
       state.orderIsPlaced = status
