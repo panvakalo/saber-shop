@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store.js'
 
 Vue.use(Router)
 
@@ -24,7 +25,8 @@ export default new Router({
     {
       path: '/manager',
       name: 'manager',
-      component: () => import('./pages/Manager.vue')
+      component: () => import('./pages/Manager.vue'),
+      beforeEnter: requireAuth
     },
     {
       path: '/planet/:planetId',
@@ -34,7 +36,16 @@ export default new Router({
     {
       path: '/orders',
       name: 'orders',
-      component: () => import('./pages/Orders.vue')
+      component: () => import('./pages/Orders.vue'),
+      beforeEnter: requireAuth
     }
   ]
 })
+
+function requireAuth (to, from, next) {
+  if (store.state.account.isJedi) {
+    next()
+  } else {
+    next('/login')
+  }
+}
