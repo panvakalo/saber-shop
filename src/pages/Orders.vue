@@ -4,6 +4,12 @@
       :title="'Orders manager'"
       :icon="'Star_Wars_Storm-Trooper'"
     />
+    <div
+      v-if="!orderedSabers.length"
+      class="bg__gray-light pa-m mt-xl xs6 border-radius__medium"
+    >
+      There are no orders active. You have time to meditate.
+    </div>
     <div class="clear-float">
       <div
         v-for="saber in orderedSabers"
