@@ -87,6 +87,9 @@ export default {
       }
     }
   },
+  mounted () {
+    this.setJediStatus(false)
+  },
   beforeDestroy () {
     this.$off('login')
     this.$off('clicked')

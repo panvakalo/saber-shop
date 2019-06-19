@@ -43,7 +43,7 @@ export default new Router({
 })
 
 function requireAuth (to, from, next) {
-  if (store.state.account.isJedi) {
+  if (store.state.account.isMasterJedi) {
     next()
   } else {
     next('/login')
